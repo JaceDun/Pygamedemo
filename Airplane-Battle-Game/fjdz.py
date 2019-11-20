@@ -21,9 +21,9 @@ global clock
 class Bullet1(pygame.sprite.Sprite):
     def __init__(self, rectition):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("image/bullet1.png")  # 分享前还是先分享自己的Python学习交流群：666468218
-        self.rect = self.image.get_rect()  # 群内不定时分享干货，包括最新的python企业案例学习资料和零基础入门教程
-        self.rect.left, self.rect.top = rectition  # 欢迎初学和进阶中的小伙伴入群学习交流
+        self.image = pygame.image.load("image/bullet1.png")
+        self.rect = self.image.get_rect()  #
+        self.rect.left, self.rect.top = rectition
         self.speed = 16
         self.active = True
         self.mask = pygame.mask.from_surface(self.image)
@@ -43,9 +43,9 @@ class Bullet1(pygame.sprite.Sprite):
 class Bullet2(pygame.sprite.Sprite):
     def __init__(self, rectition):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("image/bullet2.png")  # 分享前还是先分享自己的Python学习交流群：666468218
-        self.rect = self.image.get_rect()  # 群内不定时分享干货，包括最新的python企业案例学习资料和零基础入门教程
-        self.rect.left, self.rect.top = rectition  # 欢迎初学和进阶中的小伙伴入群学习交流
+        self.image = pygame.image.load("image/bullet2.png")
+        self.rect = self.image.get_rect()
+        self.rect.left, self.rect.top = rectition
         self.speed = 18
         self.active = True
         self.mask = pygame.mask.from_surface(self.image)
@@ -70,10 +70,9 @@ class Player(pygame.sprite.Sprite):
         self.mask = pygame.mask.from_surface(self.image1)  # 获取飞机图像的掩膜用以更加精确的碰撞检测
         # 飞机坏掉的图片
         self.destroy_images = []
-        self.destroy_images.extend([pygame.image.load("image/hero_blowup_n1.png"),  # 分享前还是先分享自己的Python学习交流群：666468218
+        self.destroy_images.extend([pygame.image.load("image/hero_blowup_n1.png"),
                                     pygame.image.load("image/hero_blowup_n2.png"),
-                                    # 群内不定时分享干货，包括最新的python企业案例学习资料和零基础入门教程
-                                    pygame.image.load("image/hero_blowup_n3.png"),  # 欢迎初学和进阶中的小伙伴入群学习交流
+                                    pygame.image.load("image/hero_blowup_n3.png"),
                                     pygame.image.load("image/hero_blowup_n4.png")])
         self.rect = self.image1.get_rect()  # 得到飞机的位置
         self.width, self.height = bg_size[0], bg_size[1]
@@ -239,9 +238,9 @@ class BulletSupply(pygame.sprite.Sprite):
         self.mask = pygame.mask.from_surface(self.image)
 
     def move(self):
-        if self.rect.top >= screenheight:  # 分享前还是先分享自己的Python学习交流群：666468218
-            self.reset()  # 群内不定时分享干货，包括最新的python企业案例学习资料和零基础入门教程
-        else:  # 欢迎初学和进阶中的小伙伴入群学习交流
+        if self.rect.top >= screenheight:
+            self.reset()
+        else:
             self.rect.top += self.speed
 
     def reset(self):
@@ -261,9 +260,9 @@ class BombSupply(pygame.sprite.Sprite):
         self.mask = pygame.mask.from_surface(self.image)
 
     def move(self):
-        if self.rect.top >= screenheight:  # 分享前还是先分享自己的Python学习交流群：666468218
-            self.reset()  # 群内不定时分享干货，包括最新的python企业案例学习资料和零基础入门教程
-        else:  # 欢迎初学和进阶中的小伙伴入群学习交流
+        if self.rect.top >= screenheight:
+            self.reset()
+        else:
             self.rect.top += self.speed
 
     def reset(self):
@@ -296,7 +295,7 @@ enemy2_killed_sound.set_volume(0.2)
 # 大boss死掉的声音
 enemy3_killed_sound = pygame.mixer.Sound("sound/enemy3_down.wav")
 enemy3_killed_sound.set_volume(0.2)
-# 自己死掉的声音
+# 英雄死掉的声音
 me_killed_sound = pygame.mixer.Sound("sound/game_over.wav")
 me_killed_sound.set_volume(0.2)
 # 按钮按下的声音
@@ -395,7 +394,8 @@ def showStartScreen():  # 主要功能：游戏刚开始的界面显示，响应
 # 主要功能：主循环，响应用户鼠标按键以及键盘事件
 def gameBeigin(running):
     clock = pygame.time.Clock()
-    background_img = pygame.image.load("image/background.png").convert()  # 载入背景图
+    # 载入背景图
+    background_img = pygame.image.load("image/background.png").convert()
     # 载入游戏结束图
     gameover_img = pygame.image.load("image/gameover.png").convert()
     gameover_rect = gameover_img.get_rect()
